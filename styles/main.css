@@ -1,0 +1,379 @@
+/* ---------------- Layout ----------------------------------- */
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "SourceSansPro", sans-serif;
+    min-width: 460px;
+}
+
+/* ---------------- Header ----------------------------------- */
+
+.header {
+    color: #004c8e;
+    padding: 0px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.header-title {
+    display: inline-block;
+    font-weight: 100;
+    margin: 0;
+    vertical-align: top;
+}
+
+.logo {
+    display: inline-block;
+    text-decoration: none;
+    color: #004c8e;
+    margin-right: 30px;
+    min-width: 300px;
+}
+
+.logo-image {
+    height: 25px;
+    vertical-align: -6px;
+    margin-right: 10px;
+}
+
+/* ---------------- Navigation ----------------------------------- */
+
+.navigation {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    text-align: right;
+}
+
+.navigation ul,
+.navigation li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.navigation li {
+    display: inline-block;
+}
+
+.navigation a {
+    display: inline-block;
+    color: #004c8e;
+    text-decoration: none;
+    padding: 20px 20px 0px;
+    margin-bottom: -1px;
+}
+
+.navigation a::after {
+    content: ' ';
+    display: block;
+    height: 3px;
+    width: 0%;
+    background: #c3c3c3;
+    margin: 18px auto 0 auto;
+    -webkit-transition: width .2s ease-in-out, color .3s ease-in-out;
+    transition: width .2s ease-in-out, color .3s ease-in-out;
+}
+
+.navigation a:hover::after {
+    background-color: #004c8e;
+    width: 100%;
+}
+
+.navigation em {
+    opacity: 0.5;
+    font-style: normal;
+}
+
+/* ---------------- Footer ----------------------------------- */
+
+.footer {
+    background: #fff;
+    text-align: center;
+    padding: 30px 20px 30px 20px;
+    background: #f3f3f3;
+    border-top: 1px solid #e0e0e0;
+    margin-top: 30px;
+}
+
+.footer-logo {
+    text-decoration: none;
+}
+
+.footer-logoImage {
+    height: 100px;
+    margin: 0 20px;
+    -webkit-transition: -webkit-transform 0.2s ease-in;
+    transition: -webkit-transform 0.2s ease-in;
+    transition: transform 0.2s ease-in;
+    transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in;
+}
+
+.footer-logo:hover .footer-logoImage {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+}
+
+/* ---------------- Hero ----------------------------------- */
+
+.hero {
+    text-align: center;
+}
+
+.hello {
+    font-size: 2em;
+    margin-bottom: 50px;
+}
+
+.search {
+    padding: 0;
+    margin: 0 10px 60px;
+}
+
+.search-counter {
+    position: relative;
+    height: 0;
+    margin: 0;
+    display: block;
+    top: 10px;
+}
+
+.search-counter--hidden {
+    display: none;
+}
+
+.search-input {
+    padding: 10px 20px 10px 35px;
+    width: 80vh;
+    max-width: 500px;
+    border-radius: 4px;
+    border: 1px solid #c3c3c3;
+    font-size: 1.1em;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    display: block;
+    background: #fff url('/images/search.svg') no-repeat 10px 50%;
+    margin: 0 auto;
+}
+
+.love {
+    font-size: 3em;
+    font-weight: 700;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #004c8e;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+}
+
+.love-logo {
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+    height: 100px;
+}
+
+.love-hearth {
+    height: 65px;
+    margin: 0 30px;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+}
+
+/* ---------------- Repos ----------------------------------- */
+
+.repoList {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+.repo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #e0e0e0;
+    border-radius: 3px;
+    background: url(/images/package.svg) no-repeat;
+    background-position-x: calc(100% - 10px);
+    background-position-y: 10px;
+}
+
+.repo-title {
+    margin: 0;
+}
+
+.repo-name {
+    color: #004c8e;
+    text-decoration: none;
+}
+
+.repo-name:hover {
+    text-decoration: underline;
+}
+
+.repo-info {
+    font-size: 0.7em;
+    margin: 0;
+    padding: 0;
+}
+
+.repo-element {
+    list-style: none;
+    display: inline-block;
+}
+
+.repo-element--hidden {
+    display: none;
+}
+
+.repo-label,
+.repo-value,
+.repo-info {
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+}
+
+.repo-element,
+.repo-value,
+.repo-label {
+    line-height: 16px;
+    vertical-align: top;
+}
+
+.repo-label {
+    color: rgb(96, 96, 96);
+    clear: both;
+    margin-right: 3px;
+}
+
+.repo-label::after {
+    content: ': ';
+}
+
+.repo-value {
+    margin-right: 15px;
+}
+
+.repo-icon {
+    margin-right: 5px;
+}
+
+.repo-description {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    line-height: 1.4em;
+}
+
+/* ---------------- Error Messages ----------------------------------- */
+
+.errorMessage-text {
+    border: 1px solid #ec661a;
+    color: #fff;
+    padding: 20px 30px;
+    border-radius: 3px;
+    background: #f39200;
+    font-weight: 300;
+}
+
+.errorMessage--hidden {
+    display: none;
+}
+
+/* ---------------- Loader ----------------------------------- */
+
+.loading {
+    text-align: center;
+    margin: 25px 0;
+    font-size: 1.5em;
+    display: block;
+    font-style: italic;
+    color: #014c8e;
+}
+
+/* ---------------- Other ----------------------------------- */
+
+
+
+.errorMessage,
+.hero,
+.repoList,
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 0 30px;
+}
+
+
+template {
+    display: none !important;
+}
+
+/* ---------------- RWD ----------------------------------- */
+
+@media only screen and (max-width: 720px)  {
+    .project-name {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px)  {
+    .love {
+        -webkit-transform: scale(.7);
+                transform: scale(.7);
+    }
+    .header .logo {
+        display: none;
+    }
+
+    .header-title {
+        font-size: 1.1em;
+    }
+
+    .search-input {
+        width: 100%;
+    }
+
+    .search-input,
+    .hello {
+        font-size: 1em;
+    }
+}

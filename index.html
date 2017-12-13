@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>RST Group Open Source Projects</title>
+        <meta charset="utf-8"/>
+        <link rel="stylesheet" type="text/css" href="/styles/main.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/4.4.0/font/octicons.css"/>
+    </head>
+    <body>
+        <header class="header">
+            <div class="header-content">
+                <a href="/" class="logo"><img src="/images/rst-logo-blue.svg" alt="RST Group Open Source Projects" title="RST Group Open Source Projects" class="logo-image"> <span class="project-name"><strong>Group</strong> Open Source Projects</span></a>
+
+                <nav class="navigation">
+                    <ul>
+                        <li>
+                            <a href="http://rst.com.pl/kariera/" target="_blank">Job offers <em>PL</em></a>
+                        </li>
+                        <li>
+                            <a href="http://rst.com.pl/piszemy/" target="_blank">Tech blog <em>PL</em></a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <article class="hero">
+            <p class="love">
+                <img class="love-logo" src="/images/rst-logo-blue.svg" alt="RST" title="RST"/> <img class="love-hearth" src="/images/heart.svg" title="♥" alt="♥"/> OpenSource
+            </p>
+            <p class="hello">We build user friendly web, mobile application and on-line systems based on high scalable solutions.</p>
+            <form class="search" id="search">
+                <input type="search" placeholder="Repository name, language or license..." class="search-input"/>
+                <span class="search-counter search-counter--hidden"></span>
+            </form>
+        </article>
+        <main>
+            <div class="errorMessage errorMessage--hidden"><p class="errorMessage-text"></p></div>
+            <ul id="repoList" class="repoList"></ul>
+            <span class="loading">Loading repositories...</span>
+        </main>
+        <footer class="footer">
+            <p>RST Group:</p>
+            <p>
+                <a href="http://rst.com.pl" class="footer-logo" target="_blank">
+                    <img src="/images/rst-logo.svg" class="footer-logoImage"/>
+                </a>
+                <a href="https://rst-it.com" class="footer-logo" target="_blank">
+                    <img src="/images/rst-logo-it.svg" class="footer-logoImage"/>
+                </a>
+            </p>
+        </footer>
+
+        <template id="repoTmpl">
+                <li class="repo">
+                    <h3 class="repo-title"><a href="" class="repo-name"></a></h3>
+                    <p class="repo-description"></p>
+                    <footer class="repo-footer">
+                        <ul class="repo-info">
+                            <li class="repo-element repo-element--stars"><img class="repo-icon" src="/images/star.svg" alt="Stars" title="Stars" aria-hidden="true"/> <span class="repo-value repo-value--stars"></span></li>
+                            <li class="repo-element repo-element--forks"><img class="repo-icon" src="/images/repo-forked.svg" alt="Forks" title="Forks" aria-hidden="true"/>  <span class="repo-value repo-value--forks"></span></li>
+                            <li class="repo-element repo-element--license"><img class="repo-icon" src="/images/law.svg" alt="License" title="License" aria-hidden="true"/> <span class="repo-value repo-value--license"></span></li>
+                            <li class="repo-element repo-element--language"><span class="repo-label">Language</span> <span class="repo-value repo-value--language"></span></li>
+                        </ul>
+                    </footer>
+                </li>
+            </template>
+    </body>
+    <script src="/bundle.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+</html>
