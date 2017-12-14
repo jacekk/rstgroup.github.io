@@ -41,10 +41,10 @@
      showgrid="false"
      inkscape:measure-start="0,0"
      inkscape:measure-end="0,0"
-     inkscape:zoom="5.6603774"
-     inkscape:cx="6.6045672"
-     inkscape:cy="27.260833"
-     inkscape:window-x="26"
+     inkscape:zoom="8.0049825"
+     inkscape:cx="33.179921"
+     inkscape:cy="30.120333"
+     inkscape:window-x="0"
      inkscape:window-y="0"
      inkscape:window-maximized="0"
      inkscape:current-layer="g13" />
@@ -64,7 +64,7 @@
      id="g13"
      style="fill:#ffffff">
     <path
-       style="fill:#004c8e;fill-opacity:1;stroke-width:0.76293653"
+       style="fill:#000000;fill-opacity:1;stroke-width:0.363;stroke:none;stroke-opacity:1;stroke-miterlimit:0;stroke-dasharray:none;paint-order:normal;stroke-linecap:square"
        d="M 1,1 V 41 H 17.724609 V 1 Z m 17.611328,0 v 40 h 16.72461 V 1 Z M 36.21875,1 V 41 H 52.941406 V 1 Z"
        transform="matrix(1.310725,0,0,-1.310725,203.51327,447.88072)"
        id="path9"

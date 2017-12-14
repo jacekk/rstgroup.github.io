@@ -13,7 +13,7 @@ body {
 /* ---------------- Header ----------------------------------- */
 
 .header {
-    color: #004c8e;
+    color: #000;
     padding: 0px 20px;
     border-bottom: 1px solid #e0e0e0;
 }
@@ -41,7 +41,7 @@ body {
 .logo {
     display: inline-block;
     text-decoration: none;
-    color: #004c8e;
+    color: #000;
     margin-right: 30px;
     min-width: 300px;
 }
@@ -74,7 +74,7 @@ body {
 
 .navigation a {
     display: inline-block;
-    color: #004c8e;
+    color: #000;
     text-decoration: none;
     padding: 20px 20px 0px;
     margin-bottom: -1px;
@@ -184,7 +184,7 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    color: #004c8e;
+    color: #000;
     -ms-flex-negative: 0;
         flex-shrink: 0;
 }
