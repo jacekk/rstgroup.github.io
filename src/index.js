@@ -9,10 +9,7 @@ if (!window.Promise) {
 import SearchView from './SearchView';
 import RepoListView from './RepoListView';
 import { showError } from './error';
-import { URL_REPOS } from './constants';
-
-const fetchRepos = () =>
-    fetch(URL_REPOS).then(response => response.json());
+import { fetchRepos } from './api';
 
 const removeRepoLoadingMessage = () => {
     const loadingElement = document.querySelector('.loading');

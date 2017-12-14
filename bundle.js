@@ -1982,7 +1982,35 @@ var SearchView = function () {
 
 exports.default = SearchView;
 
-},{"./constants":7,"./options":10,"fuse.js":1}],7:[function(require,module,exports){
+},{"./constants":8,"./options":11,"fuse.js":1}],7:[function(require,module,exports){
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.fetchRepos = undefined;
+
+var _constants = require('./constants');
+
+var sortByStarGazers = function sortByStarGazers(repoA, repoB) {
+    if (repoA.stargazers_count > repoB.stargazers_count) {
+        return -1;
+    }
+    if (repoA.stargazers_count < repoB.stargazers_count) {
+        return 1;
+    }
+    return 0;
+};
+
+var fetchRepos = exports.fetchRepos = function fetchRepos() {
+    return fetch(_constants.URL_REPOS).then(function (response) {
+        return response.json();
+    }).then(function (repoList) {
+        return repoList.sort(sortByStarGazers);
+    });
+};
+
+},{"./constants":8}],8:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2000,7 +2028,7 @@ var URL_REPOS = exports.URL_REPOS = 'https://api.github.com/orgs/rstgroup/repos?
 var KEY_ENTER = exports.KEY_ENTER = 13;
 var KEY_ESCAPE = exports.KEY_ESCAPE = 27;
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2013,7 +2041,7 @@ var showError = exports.showError = function showError(errorMessage) {
     errorMessageTextElement.textContent = errorMessage;
 };
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 'use strict';
 
 require('whatwg-fetch');
@@ -2032,7 +2060,7 @@ var _RepoListView2 = _interopRequireDefault(_RepoListView);
 
 var _error = require('./error');
 
-var _constants = require('./constants');
+var _api = require('./api');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -2040,12 +2068,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 if (!window.Promise) {
     window.Promise = _promisePolyfill2.default;
 }
-
-var fetchRepos = function fetchRepos() {
-    return fetch(_constants.URL_REPOS).then(function (response) {
-        return response.json();
-    });
-};
 
 var removeRepoLoadingMessage = function removeRepoLoadingMessage() {
     var loadingElement = document.querySelector('.loading');
@@ -2061,7 +2083,7 @@ window.addEventListener('load', function () {
         selector: '#repoList',
         listRenderer: repoListView.render
     });
-    fetchRepos().then(function (repoList) {
+    (0, _api.fetchRepos)().then(function (repoList) {
         removeRepoLoadingMessage();
         repoListView.setList(repoList);
         return repoList;
@@ -2077,7 +2099,7 @@ window.addEventListener('load', function () {
     });
 });
 
-},{"./RepoListView":5,"./SearchView":6,"./constants":7,"./error":8,"promise-polyfill":2,"whatwg-fetch":4}],10:[function(require,module,exports){
+},{"./RepoListView":5,"./SearchView":6,"./api":7,"./error":9,"promise-polyfill":2,"whatwg-fetch":4}],11:[function(require,module,exports){
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -2088,4 +2110,4 @@ var searchOptions = exports.searchOptions = {
     id: 'name'
 };
 
-},{}]},{},[9]);
+},{}]},{},[10]);
